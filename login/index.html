@@ -7,9 +7,29 @@
 
 <body>
     <form action="login.php" method="post">
-        <input type="email" name="email" placeholder="Email Address"><br>
+        <h1>Login:</h1>
+        <input type="text" name="email" placeholder="Email Address"><br>
         <input type="password" name="password" placeholder="Password"><br>
         <input type="submit" value="Log in"><br>
+    </form>
+    <br>
+    <form action="registration.php" method="post">
+        <h1>Registration:</h1>
+        <input type="text" name="firstname" placeholder="First Name"><br>
+        <input type="text" name="lastname" placeholder="Last Name"><br>
+        Birthday:
+        <input type="date" name="birthday"<br><br>
+        <input type="text" name="email" placeholder="Email Address"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Register"><br>
+    </form>
+    <br>
+    <form action="newQuestion.php" method="post">
+        <h1>New Question:</h1>
+        <input type="text" name="questionName" placeholder="Question name"><br>
+        <textarea name="questionBody" placeholder="Question body"></textarea><br>
+        <textarea name="questionSkills" placeholder="Enter multiple skills separated by commas"></textarea><br>
+        <input type="submit" value="Add Question"><br>
     </form>
 </body>
 </html>

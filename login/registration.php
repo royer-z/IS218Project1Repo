@@ -1,15 +1,48 @@
 <?php
+$firstName = $_POST['firstname'];
+$lastName = $_POST['lastname'];
+$birthday = $_POST['birthday'];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
+checkFirstName($firstName);
+checkLastName($lastName);
+checkBirthday($birthday);
 checkEmail($email);
 checkPassword($password);
+
+function checkFirstName($data) {
+    if (empty($data)) {
+        print "First name error: please enter your first name.<br>";
+    }
+    else {
+        print "Valid first name: ".$data."<br>";
+    }
+}
+
+function checkLastName($data) {
+    if (empty($data)) {
+        print "Last name error: please enter your last name.<br>";
+    }
+    else {
+        print "Valid last name: ".$data."<br>";
+    }
+}
+
+function checkBirthday($data) {
+    if (empty($data)) {
+        print "Birthday error: please enter your birthday.<br>";
+    }
+    else {
+        print "Valid birthday: ".$data."<br>";
+    }
+}
 
 function checkEmail($data) {
     $validEmail = TRUE;
     if (empty($data)) {
-       print "Email error: please enter an email address.<br>";
-       $validEmail = FALSE;
+        print "Email error: please enter an email address.<br>";
+        $validEmail = FALSE;
     }
     if (strpos($data, '@') == FALSE) {
         if (strlen($data) == 0) {
@@ -22,7 +55,7 @@ function checkEmail($data) {
         }
     }
     if ($validEmail == TRUE) {
-        print "Valid email.<br>";
+        print "Valid email: ".$data."<br>";
     }
 }
 
@@ -42,7 +75,7 @@ function checkPassword ($data) {
         $validPassword = FALSE;
     }
     if ($validPassword == TRUE) {
-        print "Valid password.<br>";
+        print "Valid password: ".$data."<br>";
     }
 }
 ?>
